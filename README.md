@@ -1,0 +1,43 @@
+# LEARNING-WORDS-THROUGH-ALPHABETS-FOR-PRE-PRIMARY-STAGE-KIDS-Ongoing-
+STAGE KIDS (Ongoing) Displays Alphabet corresponding picture to the kids along with Spelling and Pronunciation- using (Tkinter, Playsound) Modules.
+
+
+from tkinter import*
+import tkinter as tk
+from PIL import Image, ImageTk
+from playsound import playsound
+root = tk.Tk()
+root.title("hrst")
+root.geometry("600x500")
+root.iconbitmap('D:/project1/school.ico')
+
+
+def play():
+	playsound('C:/Users/crt23/Downloads/1660470570552-voicemaker.in-speech.mp3')
+
+title=Label(root,text="ANT",bd=9,relief=GROOVE,
+			font=("times new roman",50,"bold"),bg="white",fg="brown")
+title.pack(side=TOP,fill=X)
+
+
+play_button = Button(root, text="LISTEN", font=("Helvetica", 22),
+					relief=GROOVE, command=play)
+play_button.pack(pady=20)
+
+info=Label(root,text="Click on the above button to play pronounciation(sound)",
+		font=("times new roman",10,"bold")).pack(pady=20)
+
+
+photo = Image.open("C:/Users/crt23/Downloads/ant_PNG19367.png")
+resized_image = photo.resize((600,500), Image.ANTIALIAS)
+converted_image= ImageTk.PhotoImage(resized_image)
+
+label = tk.Label(root, image= converted_image, width = 600, height = 500)#,
+                 #bg = "white", fg = "yellow")
+label.pack()
+close_button =Button(root,text="close image",command=root.quit)
+close_button.pack()
+
+
+
+root.mainloop()
